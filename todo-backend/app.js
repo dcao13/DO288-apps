@@ -1,7 +1,7 @@
 var restify = require('restify');
 
 var controller = require('./controllers/items');
-/**var serverinfo = require('./controllers/serverinfo');**/
+var serverinfo = require('./controllers/serverinfo');
 
 var db = require('./models/db');
 var model = require('./models/items');
@@ -17,7 +17,7 @@ var server = restify.createServer()
     .use(restify.CORS());
     
 controller.context(server, '/todo/api', model); 
-/*serverinfo.context(server, '/todo/api');*/
+serverinfo.context(server, '/todo/api');
 
 var port = process.env.PORT || 8080;
 server.listen(port, function (err) {
