@@ -14,7 +14,7 @@ var server = restify.createServer()
     .use(restify.fullResponse())
     .use(restify.queryParser())
     .use(restify.bodyParser())
-    .use(restify.CORS());;
+    .use(restify.CORS());
     
 controller.context(server, '/todo/api', model); 
 serverinfo.context(server, '/todo/api');
